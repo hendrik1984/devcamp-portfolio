@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   
-  # Get / Post group
-  get 'about-me', to: 'pages#about'
-  get 'contact', to: 'pages#contact'
+  resources :portfolios, except: [:show]
+  
+  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
 
-  # Resources group
-  resources :portfolios
+  get 'about-me', to: 'pages#about'
+  get 'contact', to: 'pages#contact'  
 
   resources :blogs
   
