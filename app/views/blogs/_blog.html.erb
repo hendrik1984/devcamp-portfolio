@@ -1,0 +1,14 @@
+<!-- 
+Happen so often so rails developer make a shortcut on index.html just put render @blogs and
+in partial html just put the tr code without to each @blogs.each. #rails_shortcut
+-->
+<%# @blogs.each do |blog| %> 
+  <tr>
+    <td><%= blog.title.upcase %></td>
+    <td><%= blog.body %></td>
+    <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<%# end %>
