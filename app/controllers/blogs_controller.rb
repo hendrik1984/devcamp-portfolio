@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "blog" # will load layout blog.html.erb instead of application.html.erb
 
   # GET /blogs
   # GET /blogs.json
