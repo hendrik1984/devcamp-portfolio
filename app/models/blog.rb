@@ -13,4 +13,12 @@ class Blog < ApplicationRecord
   def set_defaults
     self.topic_id ||= Topic.last.id
   end
+
+  def self.special_blogs
+    all
+  end
+
+  def self.featured_blogs
+    limit(2)
+  end
 end
