@@ -4,13 +4,25 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :name
+  # validates_presence_of :name
 
   def first_name
-    self.name.split[0]
+    begin
+      self.name.split.first
+    rescue
+    end
   end
 
   def last_name
-    self.name.split[1]
+    self.name.split.last
+  end
+end
+
+def get_facebook_messages
+  begin
+    contacts_fb
+    @messages = retrieves_messages
+  rescue => e
+    flash[:error] = "Error occured contacting Facebook: #{e}"
   end
 end
