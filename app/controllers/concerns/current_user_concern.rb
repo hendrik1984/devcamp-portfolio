@@ -5,10 +5,8 @@ module CurrentUserConcern
     super || guest_user
   end
 
-  def guest_user
-    binding.pry
-    guest = GuestUser.new
-    binding.pry
+  def guest_user    
+    guest = GuestUser.new    
     guest.name = "Guest User"
     guest.first_name = "Guest"
     guest.last_name = "User"
