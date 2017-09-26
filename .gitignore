@@ -17,6 +17,9 @@
 /yarn-error.log
 
 .byebug_history
-
+.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
 # I don't want to show my secrets
 /config/secrets.yml
+.env
