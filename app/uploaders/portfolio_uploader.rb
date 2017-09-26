@@ -5,7 +5,12 @@ class PortfolioUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :file # point to public
+  # storage :aws # point to aws amazon s3
+  # but since im dont have any aws account i will use :file
+
+  # TODO: is that possible to use flickr ?
+
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
