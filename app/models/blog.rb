@@ -7,6 +7,8 @@ class Blog < ApplicationRecord
 
   belongs_to :topic
 
+  has_many :comments, dependent: :destroy
+
   #patch from myself
   after_initialize :set_defaults
 
