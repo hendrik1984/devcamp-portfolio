@@ -23,4 +23,12 @@ class Blog < ApplicationRecord
   def self.featured_blogs
     limit(2)
   end
+
+  def self.recent
+    order(created_at: :desc)
+    # order('created_at DESC') #alternate code, it's work
+  end
+
+  # scope :order_by_desc, -> {order ('created_at DESC')} # alternate code, it's work
+  
 end
