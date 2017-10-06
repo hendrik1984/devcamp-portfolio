@@ -6,7 +6,9 @@
 
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag "ninja-4f3d7217265d795548703e27fff60c10a62e5b5219c995024b9ba9aaf25f85cb.jpeg", alt: 'Profile Image', width: 300, alt: 'profile image', class: 'profile-img' %>
+        <%#= image_tag "ninja.jpeg", alt: 'Profile Image', width: 300, alt: 'profile image', class: 'profile-img' %> 
+        <!-- disable image_tag rails, heroku can't handle this part switch using assets precompile file and html tag image -->
+        <img src="/assets/ninja-4f3d7217265d795548703e27fff60c10a62e5b5219c995024b9ba9aaf25f85cb.jpeg", alt: 'Profile Image', class='Profile-img' style="width:300px;height:300px">
 
         <div class="skills">
           <% @skills.each do |skill| %>
